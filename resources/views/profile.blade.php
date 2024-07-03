@@ -35,6 +35,7 @@
                                             <h4 class="mb-0">{{ Auth::user()->fullName() }}</h4>
                                             <p>{{ Auth::user()->email }}</p>
                                             <p>{{ Auth::user()->phone_number }}</p>
+                                            <p>{{ Auth::user()->role->name }}</p>
                                         </div>
                                     </div>
                                 </div>
