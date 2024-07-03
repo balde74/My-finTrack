@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware(['auth'])->group(function()
+{
+    Route::get('profile',function()
+    {
+        return view('profile');
+    })->name('profile');
+
+    // Route::get('/settings/profile-information',ProfileController::class)->name('user-profile-information.edit');
+    
+});
+
