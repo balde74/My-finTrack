@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\SettingsBank;
+use App\Livewire\SettingsAccount;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +25,11 @@ Route::middleware(['auth'])->group(function()
     {
         return view('profile');
     })->name('profile');
+
+    route::get('settings',function(){ return view('pages.settings.settings');})->name('settings');
+
+    Route::get('/settings/account', SettingsAccount::class)->name('settings.account');
+    Route::get('/settings/bank', SettingsBank::class)->name('settings.bank');
 
     // Route::get('/settings/profile-information',ProfileController::class)->name('user-profile-information.edit');
     

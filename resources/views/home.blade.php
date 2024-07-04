@@ -1,4 +1,4 @@
-@extends('layout.app')
+@extends('layouts.app')
     <div id="main-wrapper">
 
 

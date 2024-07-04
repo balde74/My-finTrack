@@ -3,10 +3,10 @@
     </div>
     <div class="menu">
         <ul>
-            <li>
+            {{-- <li>
                 <a href="index.html">
                     <span>
-                        {{-- <i class="fi fi-rr-dashboard"></i> --}}
+                        <i class="fi fi-rr-dashboard"></i>
                     </span>
                     <span class="nav-text">Home</span>
                 </a>
@@ -66,13 +66,13 @@
                     </span>
                     <span class="nav-text">Affiliates</span>
                 </a>
-            </li>
+            </li> --}}
             <li>
-                <a href="settings.html">
+                <a href="{{ route('settings') }}">
                     <span>
                         <i class="fi fi-rs-settings"></i>
                     </span>
-                    <span class="nav-text">Settings</span>
+                    <span class="nav-text" >Settings</span>
                 </a>
             </li>
         </ul>
