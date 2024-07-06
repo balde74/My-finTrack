@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app',['title'=>'Profile'])
 @section('content')
     <div id="main-wrapper">
         <div class="content-body">

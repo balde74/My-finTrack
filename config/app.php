@@ -161,6 +161,7 @@ return [
          * Package Service Providers...
          */
         FortifyServiceProvider::class,
+        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
 
         /*
          * Application Service Providers...
