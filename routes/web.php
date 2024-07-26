@@ -27,11 +27,12 @@ Route::middleware(['auth'])->group(function()
         return view('profile');
     })->name('profile');
 
-    route::get('settings',function(){ return view('pages.settings.settings');})->name('settings');
+    route::get('settings/',function(){ return view('pages.settings.show');})->name('settings.show');
+    
 
     // Route::get('/settings/account', SettingsAccount::class)->name('settings.account');
     // Route::get('/settings/bank', SettingsBank::class)->name('settings.bank');
-    Route::get('account/{user}',[AccountController::class,'userAccount'])->name('account.show');
+    // Route::get('account/{user}',[AccountController::class,'userAccount'])->name('account.show');
 
     Route::resource('settings/account',AccountController::class)->except('show');
 

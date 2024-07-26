@@ -161,7 +161,8 @@ return [
          * Package Service Providers...
          */
         FortifyServiceProvider::class,
-        Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
+        // Mckenziearts\Notify\LaravelNotifyServiceProvider::class,
+        // MercurySeries\Flashy\FlashyServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -186,6 +187,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        // 'Flashy' => MercurySeries\Flashy\Flashy::class,
     ])->toArray(),
 
 ];

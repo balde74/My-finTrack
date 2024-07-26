@@ -68,7 +68,7 @@
                 </a>
             </li> --}}
             <li>
-                <a href="{{ route('account.show',Auth::user()->id) }}">
+                <a href="{{ route('settings.show') }}">
                     <span>
                         <i class="fi fi-rs-settings"></i>
                     </span>

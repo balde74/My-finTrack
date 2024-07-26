@@ -30,7 +30,6 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'name'=>'required|max:25',
             'balance'=>'required',
