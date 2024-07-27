@@ -14,7 +14,7 @@ class AccountComponent extends Component
     // public $accounts;
     public $editFormShow;
 
-    public $name, $balance,$EditAccountId;
+    public $name, $balance,$editAccountId;
 
     public function accountCreate()
     {
@@ -38,7 +38,7 @@ class AccountComponent extends Component
             'name' => 'required',
             'balance' => 'required|numeric',
         ]);
-        $account = Account::findOrFail($this->EditAccountId);
+        $account = Account::findOrFail($this->editAccountId);
         $account->update([
             'name' => $this->name,
             'balance' => $this->balance,
@@ -53,7 +53,7 @@ class AccountComponent extends Component
         $account = Account::findOrFail($id);
         $this->name = $account->name;
         $this->balance = $account->balance;
-        $this->EditAccountId = $account->id;
+        $this->editAccountId = $account->id;
         $this->editFormShow = 1;
 
     }

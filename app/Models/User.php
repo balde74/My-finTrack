@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Role;
+use App\Models\Wallet;
 use App\Models\Account;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -60,5 +61,10 @@ class User extends Authenticatable
     public function accounts()
     {
         return $this->hasMany(Account::class);
+    }
+
+    public function wallets()
+    {
+        return $this->hasMany(Wallet::class);
     }
 }

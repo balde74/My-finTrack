@@ -10,6 +10,7 @@
             <div class="settings-menu">
                 <a href="#" wire:click.prevent="setPage('accounts','Comptes')"  class="{{ $currentPage == 'accounts' ? 'active':''}}">Comptes</a>
                 <a href="#" wire:click.prevent="setPage('wallets','Portefeuilles')" class="{{ $currentPage == 'wallets' ? 'active':''}}">Portefeuilles</a>
+                <a href="#" wire:click.prevent="setPage('profile','Profile')" class="{{ $currentPage == 'profile' ? 'active':''}}">Profile</a>
                 {{-- <a href="settings-general.html">General</a>
                 <a href="settings-profile.html">Profile</a>
                 <a href="settings-bank.html">Add Bank</a>
@@ -26,7 +27,7 @@
                 @if ($currentPage == 'accounts')
                     <livewire:account.account-component />
                 @elseif ($currentPage == 'wallets')
-                    <livewire:portofolio-component/>
+                    <livewire:wallets-component/>
                 @endif
             </div>
         </div>

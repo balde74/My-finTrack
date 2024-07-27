@@ -7,17 +7,16 @@
            
             <div class="col-md-5 mr-1 p-2 " style="border-right: 2px solid rgb(82, 81, 81)">
                @if (!$editFormShow)
-               @include('livewire.account.partials.account-create')
+               @include('livewire.account.partials.create')
                    
                @else
-               @include('livewire.account.partials.account-edit')
+               @include('livewire.account.partials.edit')
                    
                @endif
 
             </div>
             <div class="col-md-7 p-2">
-                <h4 class="card-title  mb-2">Liste des comptes</h4>
-                @include('livewire.account.partials.account-list')
+                @include('livewire.account.partials.list')
             </div>
         </div>
 
