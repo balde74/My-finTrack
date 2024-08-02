@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Models\Income;
 use App\Models\Wallet;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -20,6 +21,11 @@ class Account extends Model
     public function wallets()
     {
         return $this->belongsToMany(Wallet::class)->withPivot('percentage');
+    }
+
+    public function incomes()
+    {
+        return $this->hasMany(Income::class);
     }
 }
 

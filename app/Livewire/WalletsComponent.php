@@ -52,7 +52,6 @@ class WalletsComponent extends Component
         $this->oldName = $wallet->name;
         $this->newName = $this->oldName;
         $this->editWalletId = $wallet->id;
-        $this->editFormShow = 1;
         //reinitialisation des message d'erreur
         $this->resetErrorBag();
     }
@@ -105,22 +104,23 @@ class WalletsComponent extends Component
                         $wallet->accounts()->updateExistingPivot($accountId, ['percentage' => $newPercentage]);
                         $totalAssociatedPercentage = $account->wallets()->sum('percentage'); //total des pourcentage du compte associer
 
-                        if ($totalAssociatedPercentage == 100) {
+                        if ($totalAssociatedPercentage < 100) {
+                            $account->is_associated = 1;
+                        } else {
                             $account->is_associated = 2;
-                            $account->save();
-                        } 
-
+                        }
+                        $account->save();
                     }
                 } else {
                     $wallet->accounts()->attach($accountId, ['percentage' => $newPercentage]);
 
                     $totalAssociatedPercentage = $account->wallets()->sum('percentage'); //total des pourcentage du compte associer
-                    if ($totalAssociatedPercentage < 100 ) {
+                    if ($totalAssociatedPercentage < 100) {
                         $account->is_associated = 1;
                     } else {
                         $account->is_associated = 2;
-                    } 
-                    $account->save(); 
+                    }
+                    $account->save();
                 };
             } else {
                 // si le pourcentage a associer est sup au pourcentage restant

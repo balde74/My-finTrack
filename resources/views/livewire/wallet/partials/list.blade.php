@@ -65,7 +65,7 @@
         {{ $wallets->links() }}
     @else
         <div>
-            <span class="text-info">Vous n'avez pas de compte</span>
+            <span class="text-info">Vous n'avez pas portefeuille enregistré</span>
         </div>
     @endif
 

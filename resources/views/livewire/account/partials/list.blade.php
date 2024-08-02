@@ -7,51 +7,38 @@
                     <span class="me-3 icon-circle bg-primary text-white">
                         <i class="fi fi-rs-bank"></i></span>
                     <div class="primary-number">
-                        <div class="row">
-                            <h5 class="mb-0 text-uppercase">{{ $account->name }}</h5>
-                            <small>{{ $account->balance }} </small>
-                            <br>
-                            <small>
-                                @if ($account->is_associated == 0)
-                                    <span><i class="fi fi-sr-triangle-warning text-warning"></i></span> Non associé
-                                @elseif ($account->is_associated == 1)
-                                    <span> <i class="fi fi-rr-info text-info"></i></span> Associé en partie
-                                @elseif ($account->is_associated == 2)
-                                    <span><i class="fi fi-sr-badge-check text-success"></i></span> Associé
-                                @endif
-
-                            </small>
-
-                            {{-- <ol class="list-group list-group-numbered">
-                            <li class="list-group-item d-flex justify-content-between align-items-start">
-                              <div class="ms-2 me-auto">
-                                <div class="fw-bold">Subheading</div>
-                                Cras justo odio
-                              </div>
-                              <span class="badge bg-primary rounded-pill">14</span>
-                            </li>
-                           
-                          </ol> --}}
-                            {{-- <ul>
-                            @foreach ($account->wallets as $wallet)
-                                <li>{{ $wallet->name }} ({{ $wallet->pivot->percentage }} %)</li>
-                            @endforeach
+                        <div class="row " >
+                            
+                                <h5 class="mb-0 text-uppercase">{{ $account->name }}</h5>
+                                <small>{{ $account->balance }} </small>
+                                <br>
+                                <small>
+                                    @if ($account->is_associated == 0)
+                                        <span><i class="fi fi-sr-triangle-warning text-warning"></i></span> Non associé
+                                    @elseif ($account->is_associated == 1)
+                                        <span> <i class="fi fi-rr-info text-info"></i></span> Associé en partie
+                                    @elseif ($account->is_associated == 2)
+                                        <span><i class="fi fi-sr-badge-check text-success"></i></span> Associé
+                                    @endif
     
-                        </ul> --}}
-                            <div class="col-md-8">
-                                <ul class="list-group-numbered">
-                                    @foreach ($account->wallets as $wallet)
-                                        <li class="list-group-item d-flex justify-content-between align-items-start ">
-                                            <div class="ms-2 me-auto">
-                                                <div class="fw-bold"><small>{{ $wallet->name }}</small></div>
-                                            </div>
-                                            <span class="badge bg-primary rounded-pill"><small>{{ $wallet->pivot->percentage }} %</small></span>
-                                        </li>
-                                        <hr class="border opacity-1">
-                                    @endforeach
+                                </small>
 
-                                </ul>
-                            </div>
+                                <div class="col-md-9">
+                                    <ul class="list-group-numbered">
+                                        @foreach ($account->wallets as $wallet)
+                                            <li class="list-group-item d-flex justify-content-between align-items-start ">
+                                                <div class="ms-2 me-auto">
+                                                    <div class="fw-bold"><small>{{ $wallet->name }}</small></div>
+                                                </div>
+                                                <span class="badge bg-primary rounded-pill"><small>{{ $wallet->pivot->percentage }} %</small></span>
+                                            </li>
+                                            <hr class="border opacity-1">
+                                        @endforeach
+    
+                                    </ul>
+                                </div>
+
+                         
 
                         </div>
 
@@ -73,7 +60,7 @@
         {{ $accounts->links() }}
     @else
         <div>
-            <span class="text-info">Vous n'avez pas de compte</span>
+            <span class="text-info"> Vous n'avez pas de compte enregistré </span>
         </div>
     @endif
 </div>

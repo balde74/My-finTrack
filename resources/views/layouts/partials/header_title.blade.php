@@ -9,7 +9,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <div class="breadcrumbs"><a href="#">Home </a>
+                    <div class="breadcrumbs"><a href="#">Accueil </a>
                         <span><i class="fi fi-rr-angle-small-right"></i></span>
                         {{-- <a href="#">{{ Route::currentRouteName() }}</a> --}}
                         <span>{{ $current_page }}</span>

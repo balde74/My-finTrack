@@ -69,7 +69,7 @@ class AccountComponent extends Component
         // $this->accounts = Auth::user()->accounts->paginate(5);
         
         return view('livewire.account.account-component',[
-            'accounts'=> Account::where('user_id', Auth::id())->paginate(5),
+            'accounts'=> Account::where('user_id', Auth::id())->paginate(3),
         ]);
     }
 }
