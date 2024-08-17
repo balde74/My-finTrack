@@ -2,7 +2,7 @@
     <h4 class="card-title  mb-2">Liste des dépenses</h4>
     @if ($expenses->count() > 0)
         <div class="table-responsive">
-            <table class="table table-sm table-striped">
+            <table class="table mb-0 table-responsive-sm">
                 <thead class="">
                     <tr class="bg-ptext-white">
                         <th>Date</th>

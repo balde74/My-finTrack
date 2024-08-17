@@ -2,8 +2,8 @@
     <h4 class="card-title  mb-2">Liste des revenus</h4>
     @if ($incomes->count() > 0)
     <div class="table-responsive">
-        <table class="table table-sm table-striped">
-            <thead class="">
+        <table class="table mb-0 table-responsive-sm">
+            <thead >
                 <tr class="bg-ptext-white">
                     <th>Date</th>
                     <th>Compte</th>

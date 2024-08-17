@@ -49,9 +49,7 @@
                 <div class="float-right">
                     <button wire:click="editFormShowFunction({{ $account->id }})"
                         class="btn btn-sm btn-outline-warning">Editer <i class="fi fi-rs-pencil ms-auto"></i></button>
-                    {{-- <button wire:click="$emit('postAdded')">kdk</button> --}}
-                    <button class=" btn btn-sm btn-outline-primary">Gérer <i class="fi fi-bs-settings"></i></button>
-                    {{-- <a href="{{ route('account.manager') }}" class="btn btn-outline-primary"></a> --}}
+                    {{-- <button class=" btn btn-sm btn-outline-primary">Gérer <i class="fi fi-bs-settings"></i></button> --}}
                 </div>
             </div>
             <hr>

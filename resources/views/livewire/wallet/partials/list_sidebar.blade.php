@@ -130,11 +130,11 @@
                                         <h4 class="card-title">Historique des Transactions</h4>
                                     </div>
                                     <div class="card-body">
-                                        <div class="transaction-table">
+                                        <div class="trnsaction-table">
                                             <div class="table-responsive">
-                                                <table class="table table-sm table-striped">
-                                                    <thead class="">
-                                                        <tr class="bg-ptext-white">
+                                                <table class="table mb-0 table-responsive-sm">
+                                                    <thead>
+                                                        <tr>
                                                             <th>Date</th>
                                                             <th>Portefeuille</th>
                                                             <th>Catégorie</th>
@@ -144,37 +144,36 @@
                                                     </thead>
                                                     <tbody>
                                                         @foreach ($wallet->expenses as $expense)
-                                                            <tr>
-                                                                <td>{{ $expense->created_at->format('d-m-Y') }}</td>
-                                                                {{-- <td>{{ $expense->created_at->diffForHumans() }}</td> --}}
-                                                                <td>{{ $expense->wallet->name }}</td>
-                                                                <td>{{ $expense->category->name }}(<small>{{ $expense->category->DefaultCategory->name }}</small>)
-                                                                </td>
-                                                                <td>{{ number_format($expense->amount, 2) }}</td>
-                                                                <td>
-                                                                    <div class="d-flex flex-column">
-                                                                        @foreach ($expense->expenseAllocations as $account)
-                                                                            <div class="d-flex justify-content-between">
-                                                                                <div class="me-2">
-                                                                                    <strong>{{ $account->account->name }}</strong>
-                                                                                </div>
-                                                                                <div class="me-2">
-                                                                                    {{ $account->allocation_percentage }}%
-                                                                                </div>
-                                                                                <div>
-                                                                                    {{ number_format($account->amount, 2) }}
-                                                                                </div>
+                                                        <tr>
+                                                            <td>{{ $expense->created_at->format('d-m-Y') }}</td>
+                                                            {{-- <td>{{ $expense->created_at->diffForHumans() }}</td> --}}
+                                                            <td>{{ $expense->wallet->name }}</td>
+                                                            <td>{{ $expense->category->name }}(<small>{{ $expense->category->DefaultCategory->name }}</small>)
+                                                            </td>
+                                                            <td>{{ number_format($expense->amount, 2) }}</td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    @foreach ($expense->expenseAllocations as $account)
+                                                                        <div class="d-flex justify-content-between">
+                                                                            <div class="me-2">
+                                                                                <strong>{{ $account->account->name }}</strong>
                                                                             </div>
-                                                                            <hr>
-                                                                        @endforeach
-                                                                    </div>
+                                                                            <div class="me-2">
+                                                                                {{ $account->allocation_percentage }}%
+                                                                            </div>
+                                                                            <div>
+                                                                                {{ number_format($account->amount, 2) }}
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr>
+                                                                    @endforeach
+                                                                </div>
 
-                                                                </td>
+                                                            </td>
 
 
-                                                            </tr>
-                                                        @endforeach
-
+                                                        </tr>
+                                          @endforeach
                                                     </tbody>
                                                 </table>
                                                 {{-- {{ $expenses->links() }} --}}
