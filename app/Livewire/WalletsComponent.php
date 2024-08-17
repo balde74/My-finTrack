@@ -2,11 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Account;
+use Carbon\Carbon;
 use App\Models\Wallet;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Account;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Auth;
 
 class WalletsComponent extends Component
 {
@@ -14,6 +15,8 @@ class WalletsComponent extends Component
 
     public $name, $newName, $oldName, $editWalletId, $editFormShow = 0;
     public $manageWalletId;
+    public $position = 'settings';
+    public $currentMonthExpenses;
 
     public $selectedAccounts = [];
 
@@ -126,14 +129,59 @@ class WalletsComponent extends Component
                 // si le pourcentage a associer est sup au pourcentage restant
                 // return $this->selectedAccounts[$accountId] = $associated->pivot->percentage;
                 //retour de l'alerte error
+            
+                return;
             }
+        } else {
+            $wallet->accounts()->detach($accountId);
         }
 
     }
+
+    public function monthlyExpenses($walletId)
+    {
+        $wallet = Wallet::findOrFail($walletId);
+        // dd($wallet);
+    
+        // Mois en cours
+        $currentMonthExpenses = $wallet->expenses()
+            ->whereMonth('created_at', Carbon::now()->month)
+            ->whereYear('created_at', Carbon::now()->year)
+            ->sum('amount');
+
+             return $currentMonthExpenses;
+    }
+    // public function getMonthlyExpenses($walletId)
+    // {
+    //     $wallet = Wallet::findOrFail($walletId);
+    
+    //     // Mois en cours
+    //     $currentMonthExpenses = $wallet->expenses()
+    //         ->whereMonth('created_at', Carbon::now()->month)
+    //         ->whereYear('created_at', Carbon::now()->year)
+    //         ->sum('amount');
+    
+    //     // Mois précédent
+    //     $lastMonthExpenses = $wallet->expenses()
+    //         ->whereMonth('created_at', Carbon::now()->subMonth()->month)
+    //         ->whereYear('created_at', Carbon::now()->subMonth()->year)
+    //         ->sum('amount');
+    
+    //     return [
+    //         'currentMonthExpenses' => $currentMonthExpenses,
+    //         'lastMonthExpenses' => $lastMonthExpenses,
+    //     ];
+    // }
     public function render()
     {
+        if ($this->position === 'sidebar') {
+            $wallets = Wallet::where('user_id', Auth::id())->get();
+            // $this->currentMonthExpenses = $this->monthlyExpenses($walletId);
+        } elseif ($this->position === 'settings') {
+            $wallets = Wallet::where('user_id', Auth::id())->paginate(4);
+        }
         return view('livewire.wallet.wallets-component', [
-            'wallets' => Wallet::where('user_id', Auth::id())->paginate(4),
+            'wallets' => $wallets,
             'accounts' => Auth::user()->accounts,
         ]);
     }

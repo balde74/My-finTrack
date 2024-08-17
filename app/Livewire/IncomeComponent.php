@@ -54,7 +54,7 @@ class IncomeComponent extends Component
 
     public function hideIncomeFormShowFunction()
     {
-        $this->editIncomeId = 0;
+        $this->editIncomeId = null;
     }
 
     public function updateIncomeFunction()
@@ -103,7 +103,7 @@ class IncomeComponent extends Component
             'income_category_id' => $this->newIncomeCategoryId,
         ]);
 
-        $this->editIncomeId = 0;
+        $this->editIncomeId = null;
     }
     public function render()
     {

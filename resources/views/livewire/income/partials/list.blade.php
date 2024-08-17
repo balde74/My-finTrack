@@ -7,7 +7,7 @@
                 <tr class="bg-ptext-white">
                     <th>Date</th>
                     <th>Compte</th>
-                    <th>catégorie</th>
+                    <th>Catégorie</th>
                     <th>Montant</th>
                     <th></th>
                 </tr>
@@ -55,7 +55,7 @@
                     <td>
                         @if ($editIncomeId != $income->id)
                             
-                        {{ $income->amount }}
+                        {{ number_format($income->amount,2) }}
                         @else
                 
                             <input type="number" wire:model="newAmount" class="form-control  @error('newAmount') is-invalid @enderror"

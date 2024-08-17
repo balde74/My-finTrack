@@ -1,7 +1,8 @@
 <div>
     @include('layouts.partials.header_title', [
-        'title' => 'Parametres',
+        'title' => 'Paramètres',
         'current_page' => $currentPageText,
+        'sectionTitle' => 'Paramètres'
     ])
 
     <div class="row">
@@ -14,8 +15,13 @@
                     class="{{ $currentPage == 'wallets' ? 'active' : '' }}">Portefeuilles</a>
                 {{-- <a href="#" wire:click.prevent="setPage('profile','Profile')"
                     class="{{ $currentPage == 'profile' ? 'active' : '' }}">Profile</a> --}}
-                <a href="#" wire:click.prevent="setPage('revenus','Revenus')"
-                    class="{{ $currentPage == 'revenus' ? 'active' : '' }}">Revenus</a>
+                <a href="#" wire:click.prevent="setPage('incomes','Revenus')"
+                    class="{{ $currentPage == 'incomes' ? 'active' : '' }}">Revenus</a>
+                <a href="#" wire:click.prevent="setPage('categories','Catégories')"
+                    class="{{ $currentPage == 'categories' ? 'active' : '' }}">Catégories</a>
+
+                <a href="#" wire:click.prevent="setPage('expenses','Dépenses')"
+                    class="{{ $currentPage == 'expenses' ? 'active' : '' }}">Dépenses</a>
                 {{-- <a href="settings-general.html">General</a>
                 <a href="settings-profile.html">Profile</a>
                 <a href="settings-bank.html">Add Bank</a>
@@ -33,8 +39,12 @@
                     <livewire:account.account-component />
                 @elseif ($currentPage == 'wallets')
                     <livewire:wallets-component />
-                @elseif ($currentPage == 'revenus')
+                @elseif ($currentPage == 'incomes')
                     <livewire:income-component />
+                @elseif ($currentPage == 'categories')
+                    <livewire:category-component />
+                @elseif ($currentPage == 'expenses')
+                    <livewire:expense-component />
                 @endif
             </div>
         </div>

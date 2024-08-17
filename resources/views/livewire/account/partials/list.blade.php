@@ -10,7 +10,7 @@
                         <div class="row " >
                             
                                 <h5 class="mb-0 text-uppercase">{{ $account->name }}</h5>
-                                <small>{{ $account->balance }} </small>
+                                <small>{{ number_format($account->balance,2) }} </small>
                                 <br>
                                 <small>
                                     @if ($account->is_associated == 0)

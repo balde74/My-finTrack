@@ -10,16 +10,25 @@
                     </span>
                     <span class="nav-text">Home</span>
                 </a>
-            </li>
+            </li> --}}
             <li>
-                <a href="wallets.html">
+                <a href="{{ route('wallet.show')}}" >
                     <span>
                         <i class="fi fi-rr-wallet"></i>
                     </span>
-                    <span class="nav-text">Wallets</span>
+                    <span class="nav-text">Portefeuilles</span>
                 </a>
             </li>
+
             <li>
+                <a href="{{ route('settings.show') }}">
+                    <span>
+                        <i class="fi fi-rs-settings"></i>
+                    </span>
+                    <span class="nav-text" >Paramètres</span>
+                </a>
+            </li>
+            {{-- <li>
                 <a href="budgets.html">
                     <span>
                         <i class="fi fi-rr-donate"></i>
@@ -67,14 +76,7 @@
                     <span class="nav-text">Affiliates</span>
                 </a>
             </li> --}}
-            <li>
-                <a href="{{ route('settings.show') }}">
-                    <span>
-                        <i class="fi fi-rs-settings"></i>
-                    </span>
-                    <span class="nav-text" >Settings</span>
-                </a>
-            </li>
+           
         </ul>
     </div>
 </div>

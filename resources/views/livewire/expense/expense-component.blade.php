@@ -1,9 +1,4 @@
 <div>
-    @if ($position === 'sidebar')
-    @include('livewire.wallet.partials.list_sidebar')
-        
-    @elseif ($position === 'settings')
-        
     <div class="row">
         <div class="col-xxl-4 col-xl-4 col-lg-6">
             <div class="card">
@@ -11,7 +6,11 @@
                     <h4 class="card-title">Gestion des portefeuilles</h4>
                 </div> --}}
                 <div class="card-body ">
-                    @include('livewire.wallet.partials.create')
+                    @if ($showEditForm)
+                        @include('livewire.expense.partials.edit')
+                    @else
+                        @include('livewire.expense.partials.create')
+                    @endif
                 </div>
             </div>
         </div>
@@ -21,10 +20,9 @@
                         <h4 class="card-title">Gestion des portefeuilles</h4>
                     </div> --}}
                 <div class="card-body col-12">
-                    @include('livewire.wallet.partials.list')
+                    @include('livewire.expense.partials.list')
                 </div>
             </div>
         </div>
     </div>
-    @endif
 </div>

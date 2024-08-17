@@ -8,7 +8,7 @@ class SettingsComponent extends Component
 {
     public $currentPage = 'accounts' ;   
     public $currentPageText = 'Comptes'; // Page par défaut
-        // public $currentPage = 'revenus' ;   
+        // public $currentPage = 'expenses' ;   
         // public $currentPageText = 'Portefeuille'; 
 
     public function setPage($page,$text)

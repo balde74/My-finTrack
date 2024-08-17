@@ -30,13 +30,13 @@
 
             <div class="text-center row">
                 <div class="col">
-                    <button type="submit" class="btn  btn-info w-100">Mettre à jour <i
-                            class="fi fi-rr-refresh ms-1"></i> </button>
+                    <button type="submit" class="btn  btn-info w-100">Modifier <i class="fi fi-rr-refresh ms-1"></i>
+                    </button>
 
                 </div>
                 <div class="col">
-                    <button wire:click.prevent="editFormHideFunction" class="btn  btn-outline-primary w-100">Nouveau
-                        compte <i class="fi fi-rr-add ms-0"></i></button>
+                    <button wire:click.prevent="editFormHideFunction" class="btn  btn-outline-danger w-100">Annuler
+                        <i class="fi fi-rr-pencil-slash"></i></button>
                 </div>
             </div>
         </div>

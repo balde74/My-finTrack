@@ -28,11 +28,12 @@
                         </div>
                     </div>
                 @endforeach --}}
+                kdkdkdkdk
                 @foreach($accounts as $account)
                 <div class="d-flex align-items-center mb-3">
                     <div class="col">
 
-                        <span style="margin-right: 5px"><strong>{{ $account->name }} : </strong></span>
+                        <span style="margin-right: 5px"><strong>{{ $account->named }} : </strong></span>
                     </div>
                     <div class="col me-3">
                         <div class="progress mb-0" style="height: 15px">
