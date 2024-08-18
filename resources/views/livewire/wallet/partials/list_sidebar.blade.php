@@ -9,7 +9,7 @@
                             <div class="wallet-nav {{ $loop->first ? 'active' : '' }}" data-bs-toggle="pill"
                                 data-bs-target="#w_{{ $wallet->id }}">
                                 <div class="wallet-nav-icon">
-                                    <span><i class="fi fi-rr-bank"></i></span>
+                                    <span><i class="fi fi-sr-wallet"></i></span>
                                 </div>
                                 <div class="wallet-nav-text">
                                     <h3 class="text-uppercase">{{ $wallet->name }}</h3>
@@ -130,7 +130,7 @@
                                         <h4 class="card-title">Historique des Transactions</h4>
                                     </div>
                                     <div class="card-body">
-                                        <div class="trnsaction-table">
+                                        <div class="transaction-table">
                                             <div class="table-responsive">
                                                 <table class="table mb-0 table-responsive-sm">
                                                     <thead>

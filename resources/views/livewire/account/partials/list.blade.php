@@ -5,7 +5,7 @@
             <div class="verify-content">
                 <div class="d-flex align-items-center">
                     <span class="me-3 icon-circle bg-primary text-white">
-                        <i class="fi fi-rs-bank"></i></span>
+                        <i class="fi fi-ss-coins"></i></span>
                     <div class="primary-number">
                         <div class="row " >
                             

@@ -6,7 +6,7 @@
             <div class="d-flex  align-items-center flex-wrap">
 
 
-                <span class="me-3 icon-circle bg-primary text-white"><i class="fi fi-rr-credit-card"></i></span>
+                <span class="me-3 icon-circle bg-primary text-white"><i class="fi fi-sr-wallet"></i></span>
                 <div class="flex-grow-1 ">
                     @if ($editWalletId == $wallet->id)
                         @include('livewire.wallet.partials.edit')

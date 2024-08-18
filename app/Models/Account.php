@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use App\Models\Income;
 use App\Models\Wallet;
+use App\Models\Expense;
 use App\Models\ExpenseAllocation;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -32,6 +33,11 @@ class Account extends Model
     public function expenseAllocations()
     {
         return $this->hasMany(ExpenseAllocation::class);
+    }
+
+    public function expenses()
+    {
+        return $this->hasMany(Expense::class);
     }
 }
 

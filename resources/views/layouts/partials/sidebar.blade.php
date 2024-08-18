@@ -14,9 +14,17 @@
             <li>
                 <a href="{{ route('wallet.show')}}" >
                     <span>
-                        <i class="fi fi-rr-wallet"></i>
+                        <i class="fi fi-sr-wallet"></i>
                     </span>
                     <span class="nav-text">Portefeuilles</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('account.show')}}" >
+                    <span>
+                        <i class="fi fi-ss-coins"></i>
+                    </span>
+                    <span class="nav-text">Comptes</span>
                 </a>
             </li>
 

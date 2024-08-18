@@ -13,8 +13,8 @@ class AccountComponent extends Component
     // protected $listeners = ['accountCreated' => 'render'];
     // public $accounts;
     public $editFormShow;
-
     public $name, $balance,$editAccountId;
+    public $position = 'settings';
 
     public function accountCreate()
     {
@@ -66,10 +66,16 @@ class AccountComponent extends Component
 
     public function render()
     {
+        if ($this->position === 'sidebar') {
+            $accounts = Account::where('user_id', Auth::id())->get();
+            // $this->currentMonthExpenses = $this->monthlyExpenses($walletId);
+        } elseif ($this->position === 'settings') {
+            $accounts = Account::where('user_id', Auth::id())->paginate(3);
+        }
         // $this->accounts = Auth::user()->accounts->paginate(5);
         
         return view('livewire.account.account-component',[
-            'accounts'=> Account::where('user_id', Auth::id())->paginate(3),
+            'accounts'=> $accounts
         ]);
     }
 }
