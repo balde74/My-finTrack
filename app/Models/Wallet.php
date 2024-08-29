@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Budget;
 use App\Models\Account;
 use App\Models\Expense;
-use App\Models\User;
-use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\DefaultCategoryBudget;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Wallet extends Model
 {
@@ -30,6 +32,16 @@ class Wallet extends Model
         return $this->hasMany(Expense::class);
     }
 
+    public function defaultCategoryBudgets()
+    {
+        return $this->hasMany(DefaultCategoryBudget::class);
+    }
+
+    public function CategoryBudgets()
+    {
+        return $this->hasMany(Budget::class);
+    }
+    
     // montant total du wallet
     public function calculateTotalAmount()
     {

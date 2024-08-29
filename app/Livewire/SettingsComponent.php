@@ -6,10 +6,10 @@ use Livewire\Component;
 
 class SettingsComponent extends Component
 {
-    public $currentPage = 'accounts' ;   
-    public $currentPageText = 'Comptes'; // Page par défaut
-        // public $currentPage = 'expenses' ;   
-        // public $currentPageText = 'Portefeuille'; 
+    // public $currentPage = 'accounts' ;   
+    // public $currentPageText = 'Comptes'; // Page par défaut
+        public $currentPage = 'budgets' ;   
+        public $currentPageText = 'Portefeuille'; 
 
     public function setPage($page,$text)
     {

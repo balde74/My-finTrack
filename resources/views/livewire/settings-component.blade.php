@@ -2,7 +2,7 @@
     @include('layouts.partials.header_title', [
         'title' => 'Paramètres',
         'current_page' => $currentPageText,
-        'sectionTitle' => 'Paramètres'
+        'sectionTitle' => 'Paramètres',
     ])
 
     <div class="row">
@@ -22,6 +22,9 @@
 
                 <a href="#" wire:click.prevent="setPage('expenses','Dépenses')"
                     class="{{ $currentPage == 'expenses' ? 'active' : '' }}">Dépenses</a>
+
+                <a href="#" wire:click.prevent="setPage('budgets','Budgets')"
+                    class="{{ $currentPage == 'budgets' ? 'active' : '' }}">Budgets</a>
                 {{-- <a href="settings-general.html">General</a>
                 <a href="settings-profile.html">Profile</a>
                 <a href="settings-bank.html">Add Bank</a>
@@ -45,6 +48,8 @@
                     <livewire:category-component />
                 @elseif ($currentPage == 'expenses')
                     <livewire:expense-component />
+                    @elseif ($currentPage == 'budgets')
+                    <livewire:budget-component />
                 @endif
             </div>
         </div>

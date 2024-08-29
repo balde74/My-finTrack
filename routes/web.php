@@ -31,6 +31,10 @@ Route::middleware(['auth'])->group(function () {
         return view('pages.accounts.show', ['position' => $position]);
     })->name('account.show');
 
+    Route::get('budgets/{position?}', function ($position = 'sidebar') {
+        return view('pages.budgets.show', ['position' => $position]);
+    })->name('budget.show');
+
 
     // route::get('manage-wallet/{id}',[WalletController::class,'show'])->name('wallet.show');
 

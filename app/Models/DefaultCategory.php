@@ -12,6 +12,6 @@ class DefaultCategory extends Model
 
     public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Category::class);
     }
 }

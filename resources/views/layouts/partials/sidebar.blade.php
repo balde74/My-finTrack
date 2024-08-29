@@ -20,6 +20,14 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('budget.show') }}">
+                    <span>
+                        <i class="fi fi-rr-donate"></i>
+                    </span>
+                    <span class="nav-text">Budgets</span>
+                </a>
+            </li>
+            <li>
                 <a href="{{ route('account.show')}}" >
                     <span>
                         <i class="fi fi-ss-coins"></i>
